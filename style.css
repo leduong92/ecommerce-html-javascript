@@ -668,9 +668,192 @@ form.search button:hover {
     margin: 0 0.5em 0.5em 0;
 }
 
-/* 02. SLIDER
+/* -----------------------
+ * 02. SLIDER
+ *--------------------------*/
 
-*/
+.slider .item {
+    position: relative;
+    height: 474px;
+}
+
+.slider .item::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 450px;
+    height: 300px;
+    background-color: var(--white-color);
+    z-index: 1;
+    filter: blur(50px);
+    opacity: .8;
+}
+
+.slider .text-content {
+    position: relative;
+    height: var(--percent100);
+    justify-content: flex-end;
+    padding: 0 0 10% 10%;
+    z-index: 1;
+}
+
+.slider h4 {
+    font-size: var(--font-small);
+    font-weight: var(--fw7);
+    width: fit-content;
+    padding: 4px 10px;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    border-radius: 4px;
+}
+
+.text-content :where(h2, h3) span:first-child {
+    font-weight: var(--fw3);
+    columns: var(--light-text-color);
+}
+
+.text-content :where(h2, h3) span:last-child {
+    columns: var(--secondary-dark-color);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+
+/* -----------------
+ * 03. BRANDS
+ *------------------*/
+
+.brands .wrapper {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2em 0;
+}
+
+.brands .item img {
+    opacity: .25;
+    transition: opacity .3s;
+}
+
+.brands .item a:hover img {
+    opacity: 1;
+}
+
+/* -----------------
+ * 04. PRODUCT BLOCK STYLE
+ *------------------*/
+.sectop {
+    justify-content: space-between;
+    padding-bottom: 0.5em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sectop h2 {
+    position: relative;
+    font-size: 1.5em;
+    font-weight: var(--fw7);
+}
+
+.sectop h2 span:not(.circle) {
+    padding: 0 0 0 2em;
+}
+
+.sectop h2 .circle {
+    top: -5px;
+}
+
+
+/* 04. PRODUCT -----------------
+ * a. Global product
+ *------------------*/
+
+.products .offer {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.products .offer p {
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+.products .offer ul {
+    gap: 1em;
+}
+
+.products .offer ul li {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    padding: 0.5em;
+    line-height: initial;
+    color: var(--secondary-dark-color);
+    background-color: var(--light-bg-color);
+    border-radius: 5px;
+}
+
+.products .offer ul li:not(:last-child)::before {
+    content: ':';
+    position: absolute;
+    right: -0.6em;
+    color: var(--light-text-color);
+}
+
+.products :where(.image, .thumbnail) img {
+    transition: transform .3s;
+}
+
+.products :where(.image, .thumbnail):hover img {
+    transform: scale(1.1);
+}
+
+.products .hoverable {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.products .hoverable li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 04. PRODUCT -----------------
+ * b. BIG product
+ *------------------*/
+.products.big .item {
+    flex-direction: column;
+    padding: 2.5em;
+    border: 2px solid var(--secondary-dark-color);
+    border-radius: 7px;
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+/* 04. PRODUCT -----------------
+ * c. MINI product
+ *------------------*/
+
+
+/* 04. PRODUCT -----------------
+ * d. MAIN product
+ *------------------*/
+
+
+
+
+/* -----------------
+ * 05. BANNER 
+ *------------------*/
+
+
+
+
+
+
+
 
 
 
@@ -824,19 +1007,19 @@ form.search button:hover {
         background-size: auto;
     }
 
-    .dtp-menu .beauty ul {
+    .dpt-menu .beauty ul {
         background-image: url(assets/menu/menu_bg1.jpg);
     }
 
-    .dtp-menu .electric ul {
+    .dpt-menu .electric ul {
         background-image: url(assets/menu/menu_bg2.jpg);
     }
 
-    .dtp-menu .fashion ul {
+    .dpt-menu .fashion ul {
         background-image: url(assets/menu/menu_bg3.jpg);
     }
 
-    .dtp-menu .homekit .mega ul {
+    .dpt-menu .homekit .mega ul {
         background-image: url(assets/menu/menu_bg4.jpg);
     }
 
@@ -858,4 +1041,22 @@ form.search button:hover {
     .dpt-menu .has-child:hover .mega {
         display: flex;
     }
+
+    /* Slider */
+
+    .slider>div>.wrapper {
+        width: calc(100% - (300px + 2em));
+        margin-left: auto;
+    }
+
+    /* Products */
+
+    .trending .products {
+        flex: 0 0 33.3333%;
+    }
+
+    .products .big .media {
+        max-height: 373px;
+    }
+
 }
